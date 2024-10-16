@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>구구단</title>
+</head>
+
+<body>
+    <h2>구구단 구하기</h2>
+    <input type="number" id="단수">
+    <input type="button" value="99dan ㄱ(input == 0 ? return : start)" onclick="gugudan()">
+    <hr>
+
+    <div class="출력">
+
+    </div>
+
+    <script>
+        function gugudan(params) {
+            let 몇단 = document.getElementById("단수").value;
+            let 출력할거 = document.getElementsByClassName("출력")[0];
+
+            if (몇단 == 0) {
+                출력할거.innerHTML = '';
+            } else {
+                //document.write(`<h4>${몇단}단 출력</h4>`);
+                출력할거.innerHTML += `<h4>${몇단}단 출력</h4>`;
+                for (let i = 1; i < 10; i++) {
+                    //document.writeln(`<span>${몇단} * ${i} = ${몇단 * i}<br></span>`);
+                    출력할거.innerHTML += `<span>${몇단} * ${i} = ${몇단 * i}<br></span>`;
+                }
+            }
+        }
+
+        /* let t = "<h1>21세기에 성지현한테 까이는 박한결이 있다??? 크크루삥뽕?</h1>"; //변수 선언, 태그 적어서 출력 가능함.
+
+        document.write(t);
+        let k = window.prompt("입력");  //입력 받기
+        for (let j = 1; j <= 9; j++)    //입력받은 값의 단 출력하기.
+            document.writeln(k + "*" + j + "=" + k * j + "<br>"); */
+    </script>
+</body>
+
+</html>
