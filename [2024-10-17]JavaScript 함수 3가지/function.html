@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="숫자1">
+    <input type="number" id="숫자2">
+    <input type="number" id="결과">
+    <input type="button" value="더하기" onclick="add()">
+
+
+    <script>
+        function 구구단() { }
+
+        //아래 두 방식은 호이스팅이 됨.
+        let 구구단2 = function () { }
+        let 구구단3 = () => { }
+
+        let add = () => {
+            num1 = parseInt(document.getElementById("숫자1").value);
+            num2 = parseInt(document.getElementById("숫자2").value);
+
+            document.getElementById("결과").value = num1 + num2;
+
+        }
+    </script>
+</body>
+
+</html>
