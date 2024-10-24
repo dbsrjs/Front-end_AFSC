@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>다크모드 만들기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="imgs/main_img.png" alt="main">
+            <div class="mode">
+                <label for="모드변경">모드변경</label>
+                <input type="checkbox" value="다크모드" id="모드변경">
+            </div>
+        </header>
+
+        <nav>
+            <div class="logo">
+                <a href="#">
+                    <img src="imgs/logo.png" alt="로고">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">School</a></li>
+                <li><a href="#">Major</a></li>
+                <li><a href="#">Etc</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h2><a href="#">Home</a></h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br>
+                Incidunt quibusdam iusto, alias est perferendis aut ipsa itaque<br>
+                numquam officia iste, explicabo velit. Optio,<br>
+                quod dignissimos praesentium consequuntur eaque ad ab!
+            </p>
+        </section>
+    </div>
+
+    <script>
+        let 체크상자 = document.getElementById("모드변경");
+
+        체크상자.addEventListener("change", function () {
+            if (체크상자.checked) {
+                //체크 됨
+                document.body.style.backgroundColor = "black";  //그냥 백그라운드 컬러
+                document.getElementsByTagName('nav')[0].style.backgroundColor = "black";    //nav 백그라운드 컬러
+                document.getElementsByTagName('section')[0].style.backgroundColor = "black";
+                document.getElementsByTagName('h2')[0].children[0].style.color = "gold";
+
+                document.getElementsByTagName('p')[0].style.backgroundColor = "beige";
+                document.getElementsByTagName('p')[0].style.color = "black";
+
+                let list = document.getElementsByTagName('li');
+                for (let i = 0; i < list.length; i++) {          //nav>li 백그라운드 컬러
+                    list[i].style.backgroundColor = "red";
+                    list[i].children[0].style.color = "whilte";
+                }
+            } else {
+                document.body.style.backgroundColor = "white";
+                document.getElementsByTagName('nav')[0].style.backgroundColor = "#dbddf766";
+                document.getElementsByTagName('section')[0].style.backgroundColor = "#dbddf766";
+                document.getElementsByTagName('h2')[0].children[0].style.color = "black";
+
+                let list = document.getElementsByTagName('li');
+                for (let i = 0; i < list.length; i++) {
+                    list[i].style.backgroundColor = "#dbddf7"
+                    list[i].children[0].style.color = "black";
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
