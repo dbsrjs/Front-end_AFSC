@@ -21,16 +21,16 @@
 
         function 이전(params) {
             cnt -= 1;
-
-            document.getElementById('이미지').setAttribute("src", "imgs/img_" + cnt + ".jpg");
+            if (cnt == 0) cnt = 5;
+            document.getElementById('이미지').setAttribute("src", `imgs/img_${cnt}.jpg`);
 
 
         }
 
         function 다음(params) {
             cnt += 1;
-
-            document.getElementById('이미지').setAttribute("src", "imgs/img_" + cnt + ".jpg")
+            if (cnt == 6) cnt = 1;
+            document.getElementById('이미지').setAttribute("src", `imgs/img_${cnt}.jpg`)
         }
     </script>
 </body>
