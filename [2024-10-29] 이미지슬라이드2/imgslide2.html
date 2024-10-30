@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="imgslide2.css">
+</head>
+<body>
+    <div class="slideBox">
+        <div class="box">
+            <img src="imgs/img_1.jpg" alt="img1">
+            <img src="imgs/img_2.jpg" alt="img2">
+            <img src="imgs/img_3.jpg" alt="img3">
+            <img src="imgs/img_4.jpg" alt="img4">
+            <img src="imgs/img_5.jpg" alt="img5">
+        </div>
+    </div>
+    <div class="btnBox">
+        <input type="button" value="next" onclick="다음()">
+    </div>
+
+    <script>
+        let 번째 = 0;
+
+        let 다음 =()=> {
+            번째++;
+            if(번째==5) 번째=0
+
+            let 박스 = document.getElementsByClassName("box")[0];
+            // 박스.style.transform = "translateX(-631px)";
+            박스.style.transform = `translateX(${번째*-631}px)`;
+
+            
+        }        
+    </script>
+</body>
+</html>
