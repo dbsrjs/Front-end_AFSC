@@ -19,49 +19,43 @@ header {
 }
 
 .logo {
-    background: black;
+    background: #33333333;
     width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background: black;
 }
 
 .logo span {
     color: white;
-    font-size: 24pt;
+    font-size: 20pt;
     font-weight: 900;
     font-family: "바탕체";
-    /* transition: transform 0.5s ease-in-out; */
+    /* transition-property: transform; */
+    /* transition-duration: 1s; */
+    /* transition-timing-function: ease-in-out; */
 }
 
+/* 
+.logo:hover span{transform: translateY(-10px);}
+#t1{transition: transform 0.5s ease-in-out;}
+#t2{transition: transform 0.5s ease-in-out 0.1s;}
+#t3{transition: transform 0.5s ease-in-out 0.2s;}
+#t4{transition: transform 0.5s ease-in-out 0.3s;}
+#t5{transition: transform 0.5s ease-in-out 0.4s;}
+*/
+
 .logo:hover span {
-    /* transform: translateY(-10px); */
     animation: logoWave 0.5s;
 }
 
-@keyframes logoWave {
-    0% {}
-
-    100% {
-        transform: translateY(-10px);
-    }
-}
-
-
-nav {
-    background: black;
-    position: relative;
-    width: 85%;
-    z-index: 2;
-}
-
 #t1 {
-    animation: logoWave 0.5s ease-in-out 0s infinite alternate;
+    animation: logoWave 0.5s ease-in-out 0s infinite alternate-reverse;
 }
 
 #t2 {
-    animation: logoWave 0.5s ease-in-out 0.1s infinite alternate;
+    animation: logoWave 0.5s ease-in-out 0.1s infinite alternate-reverse;
 }
 
 #t3 {
@@ -74,6 +68,21 @@ nav {
 
 #t5 {
     animation: logoWave 0.5s ease-in-out 0.4s infinite alternate;
+}
+
+@keyframes logoWave {
+    0% {}
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+nav {
+    background: black;
+    position: relative;
+    width: 85%;
+    z-index: 2;
 }
 
 .menu {
@@ -93,7 +102,6 @@ nav {
     background: beige;
 }
 
-/* 대충 마우스 올리면 색 바뀜 */
 .menu>li>a:hover {
     background: blanchedalmond;
     color: chocolate
@@ -110,16 +118,20 @@ nav {
     background: honeydew;
 }
 
-/* 대충 마우스 올리면 색 바뀜 */
 .sub>li>a:hover {
-    background: blanchedalmond;
-    color: chocolate
+    background: chocolate;
+    color: blanchedalmond;
+}
+
+.imgslide {
+    height: 400px;
+    overflow: hidden;
 }
 
 .slideWrap {
-    height: 400px;
+    height: 1200px;
     overflow: hidden;
-    animation: imgSlideMove 0.5s ease-in-out 0.5s infinite alternate;
+    animation: imgSlideMove 2s ease-in-out 2s infinite alternate;
 }
 
 @keyframes imgSlideMove {
@@ -133,6 +145,7 @@ nav {
         transform: translateY(-800px);
     }
 }
+
 
 .slideWrap li {
     width: 100%;
@@ -154,8 +167,64 @@ nav {
     width: 300px;
     height: 100px;
     line-height: 100px;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
     text-align: center;
+    color: white;
     font-size: 25pt;
+    font-weight: 900;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+/* ---가로 슬라이드--- */
+
+
+.imgslideG {
+    width: 100%;
+    height: 400px;
+    /* overflow: hidden; */
+}
+
+.slideWrapG {
+    width: 300%;
+    display: flex;
+    animation: day3 2s ease-in-out 2s infinite alternate;
+}
+
+@keyframes day3 {
+    0% {}
+
+    50% {
+        transform: translateX(calc(-100% / 3));
+    }
+
+    100% {
+        transform: translateX(calc(-100% / 3 * 2));
+    }
+}
+
+.slideWrapG li {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.slideWrapG img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.imgTextG {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: white;
+    font-size: 25pt;
+    font-weight: 900;
+    background: rgba(0, 0, 0, 0.3);
 }
